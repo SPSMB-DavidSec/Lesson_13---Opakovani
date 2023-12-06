@@ -1,6 +1,7 @@
 package cz.secda1.test1;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -40,5 +41,6 @@ public class Main {
         Map<List<Allergen>, List<LunchItem>> mapAllergens = TestUtils.groupMealsByAllergens(items);
         System.out.println(mapAllergens);
 
+        System.out.println(TestUtils.filterSoupsInWeek(items, LocalDate.of(2023,11,29)));
     }
 }

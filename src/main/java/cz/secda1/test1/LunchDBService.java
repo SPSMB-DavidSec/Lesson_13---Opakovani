@@ -17,7 +17,6 @@ public class LunchDBService {
 
     private void initDB() {
 
-
         lunchItems = new ArrayList<>();
         lunchItems.add(new LunchItem("15.11.2023", LunchItemKind.SOUP, "polevka", "Valašská kyselica", 0, List.of(wheat, milk), "14.11.2023", true));
         lunchItems.add(new LunchItem("15.11.2023", LunchItemKind.MAIN_DISH, "oběd1", "Vepřová plec na žampiónech, rýže", 25, List.of(wheat, milk), "14.11.2023", true));

@@ -1,18 +1,30 @@
 package cz.secda1.test1;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class LunchItem {
-    private String date;
+    private LocalDate date;
     private LunchItemKind kind;
     private String menuOption;
     private String name;
     private double price;
     private List<Allergen> allergens;
-    private String timeToCancel;
+    private LocalDate timeToCancel;
     private boolean ordered;
 
     public LunchItem(String date, LunchItemKind kind, String menuOption, String name, double price, List<Allergen> allergens, String timeToCancel, boolean ordered) {
+        this.date = LocalDate.parse(date, DateTimeUtils.dateFormat);
+        this.kind = kind;
+        this.menuOption = menuOption;
+        this.name = name;
+        this.price = price;
+        this.allergens = allergens;
+        this.timeToCancel = LocalDate.parse(timeToCancel, DateTimeUtils.dateFormat);
+        this.ordered = ordered;
+    }
+
+    public LunchItem(LocalDate date, LunchItemKind kind, String menuOption, String name, double price, List<Allergen> allergens, LocalDate timeToCancel, boolean ordered) {
         this.date = date;
         this.kind = kind;
         this.menuOption = menuOption;
@@ -23,11 +35,11 @@ public class LunchItem {
         this.ordered = ordered;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -71,11 +83,11 @@ public class LunchItem {
         this.allergens = allergens;
     }
 
-    public String getTimeToCancel() {
+    public LocalDate getTimeToCancel() {
         return timeToCancel;
     }
 
-    public void setTimeToCancel(String timeToCancel) {
+    public void setTimeToCancel(LocalDate timeToCancel) {
         this.timeToCancel = timeToCancel;
     }
 
